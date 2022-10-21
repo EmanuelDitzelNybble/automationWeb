@@ -2,6 +2,7 @@ package controlSelenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import singletonSession.Session;
 
@@ -15,13 +16,7 @@ public class Control {
     public Control (By locator){
         this.locator=locator;
     }
-/*
-    public void WaitIsClickable(){
-        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(15);
 
-    }
-
- */
     protected void findControl(){
         control= Session.getInstance().getBrowser().findElement(this.locator);
     }
@@ -48,4 +43,16 @@ public class Control {
         this.findControl();
         return control.getAttribute(value);
     }
+
+    public void waitClickable()
+    {
+        // todo --> factory para instanciar el wait una sola vez
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(this.locator));
+    }
+    // mainPage.loginButton.click();
+//        mainPage.loginButton.waitClickable();
+
+// los wait los metemos en control
+
 }

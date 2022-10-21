@@ -12,19 +12,16 @@ public class Session {
         // todo --> create properties file - browser
         browser= FactoryBrowser.make("chrome").create();
     }
-
     public static Session getInstance(){
         if (session == null)
             session= new Session();
         return session;
-
     }
 
     public void closeBrowser(){
         browser.quit();
         session=null;
     }
-
     public WebDriver getBrowser() {
         return browser;
     }
