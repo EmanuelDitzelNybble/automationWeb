@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
@@ -60,17 +61,21 @@ public class ModifyingToDo {
         String editedToDo = "To Do modified";
         driver.findElement(By.id("NewItemContentInput")).sendKeys(toDo);
         driver.findElement(By.id("NewItemAddButton")).click();
-        //Assertions.assertEquals(driver.findElement(By.xpath("//ul[@id=\"mainItemList\"]/li[last()]//*[@class=\"ItemContentDiv\"]")).getText(),projectName);
+        // Assertions.assertEquals(driver.findElement(By.xpath("//ul[@id=\"mainItemList\"]/li[last()]//*[@class=\"ItemContentDiv\"]")).getText(),projectName);
 
         // Editing Task
         Thread.sleep(4000);
         driver.findElement(By.xpath("//div[text()='"+toDo+"']")).click();
         driver.findElement(By.xpath("//textarea[@id='ItemEditTextbox']")).clear();
         driver.findElement(By.xpath("//textarea[@id='ItemEditTextbox']")).sendKeys(editedToDo + Keys.ENTER);
-        wait.until(ExpectedConditions.not(visibilityOf(driver.findElement(By.xpath("//img[@id=\"LoaderImg\" and contains(concat(' ', @style, ' '), ' display: block;')]"))))); // esto editar
+        wait.until(ExpectedConditions.not(visibilityOf(driver.findElement(By.xpath("//img[@id=\"LoaderImg\" and contains(concat(' ', @style, ' '), ' display: block;')]")))));
         Assertions.assertEquals(editedToDo,driver.findElement(By.xpath("//div[text()='"+editedToDo+"']")).getText(),"ERROR while editing item");
         action.moveToElement(driver.findElement(By.xpath("//div[text()='"+editedToDo+"']"))).pause(Duration.ofSeconds(2)).perform();
-        Thread.sleep(4000);
 
+        // Deleting task
+        driver.findElement(By.xpath("//div[@class=\"ItemContentDiv\" and text()='"+editedToDo+"']")).click();
+        driver.findElement(By.xpath("//div[@class=\"ItemIndicator\"]//img[@style=\"display: inline;\"]")).click();
+        driver.manage().timeouts().implicitlyWait(Duration.of(5, ChronoUnit.SECONDS));
+        driver.findElement(By.xpath("//ul[@id=\"itemContextMenu\"]//a[@href=\"#delete\"]")).click();
     }
 }
