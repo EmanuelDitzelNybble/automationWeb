@@ -4,7 +4,6 @@ import factoryBrowser.FactoryBrowser;
 import org.openqa.selenium.WebDriver;
 
 public class Session {
-
     private static Session session=null;
     private WebDriver browser;
 

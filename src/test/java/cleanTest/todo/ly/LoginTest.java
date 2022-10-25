@@ -1,9 +1,9 @@
-package cleanTest;
+package cleanTest.todo.ly;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class LoginTest extends TestBaseTodoLy{
+public class LoginTest extends TestBaseTodoLy {
     @Test
     public void verifyLoginSuccessfully(){
         mainPage.loginButton.click();

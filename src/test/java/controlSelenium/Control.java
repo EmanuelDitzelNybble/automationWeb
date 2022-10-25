@@ -50,9 +50,5 @@ public class Control {
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(this.locator));
     }
-    // mainPage.loginButton.click();
-//        mainPage.loginButton.waitClickable();
-
-// los wait los metemos en control
 
 }

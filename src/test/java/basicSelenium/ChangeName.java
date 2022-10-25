@@ -36,7 +36,6 @@ public class ChangeName {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 
-
         // Login Steps:
         driver.findElement(By.xpath("//img[@src='/Images/design/pagelogin.png']")).click();
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxEmail")).sendKeys("emanuel.ditzel@nybblegroup.com");
