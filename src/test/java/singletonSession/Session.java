@@ -25,5 +25,16 @@ public class Session {
         return browser;
     }
 
+    public void switchToDefaultFrame()
+    {
+        getInstance().getBrowser().switchTo().defaultContent();
+    }
+    public void switchIFrame(String iFrameId)
+    {
+        getInstance().getBrowser().switchTo().frame(iFrameId);
+    }
+
+
+
 }
 
