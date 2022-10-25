@@ -36,6 +36,6 @@ public class CRUDYopMail extends TestBaseYopMail {
             inboxPanel.selectMessage.click();
             Session.getInstance().getBrowser().switchTo().defaultContent();
             inboxPanel.deleteButton.click();
-            Assertions.assertFalse();
+            //Assertions.assertFalse();
         }
 }
