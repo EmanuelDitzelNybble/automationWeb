@@ -43,10 +43,13 @@ public class Control {
         this.findControl();
         return control.getAttribute(value);
     }
+    public void waitTextToBe(String texto){
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.textToBe(this.locator,texto));
+    }
 
     public void waitClickable()
     {
-        // todo --> factory para instanciar el wait una sola vez
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(this.locator));
     }

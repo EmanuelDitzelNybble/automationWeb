@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import singletonSession.Session;
 
+import java.sql.Driver;
 import java.util.Date;
 
 public class CRUDYopMail extends TestBaseYopMail {
@@ -18,8 +19,9 @@ public class CRUDYopMail extends TestBaseYopMail {
             login.mail.setText(mail);
             login.emailButton.click();
             inboxPanel.newMessageButton.click();
-            Session.getInstance().getBrowser().switchTo().frame(iframeInbox);
+            Session.getInstance().switchIFrame(iframeInbox);
             Assertions.assertTrue(newMessage.sendButton.isControlDisplayed(), "Error, login failed.");
+            Assertions.assertFalse(login.clearButton.isControlDisplayed());
 
             // New Message
             newMessage.toTextBox.setText(mail);
@@ -27,15 +29,14 @@ public class CRUDYopMail extends TestBaseYopMail {
             newMessage.bodyMessage.setText(randomText);
             newMessage.sendButton.click();
 
-
             // Delete Message
-            Session.getInstance().getBrowser().switchTo().defaultContent();
+            Session.getInstance().switchToDefaultFrame();
             inboxPanel.refreshButton.click();
-            Session.getInstance().getBrowser().switchTo().frame(iframeMessagePanel);
-            // Thread.sleep(4000);
+            Session.getInstance().switchIFrame(iframeMessagePanel);
+            inboxPanel.selectMessage.waitClickable();
             inboxPanel.selectMessage.click();
-            Session.getInstance().getBrowser().switchTo().defaultContent();
+
+            Session.getInstance().switchToDefaultFrame();
             inboxPanel.deleteButton.click();
-            //Assertions.assertFalse();
         }
 }

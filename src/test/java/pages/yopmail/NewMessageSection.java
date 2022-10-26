@@ -11,6 +11,4 @@ public class NewMessageSection {
     public Button sendButton = new Button(By.xpath("//span[text()=\"Send the message\"]"));
 
     public Button messageCreated = new Button(By.xpath("//span[@class=\"lmf\"]"));
-
-
 }
