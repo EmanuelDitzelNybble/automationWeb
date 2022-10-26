@@ -54,4 +54,9 @@ public class Control {
         wait.until(ExpectedConditions.elementToBeClickable(this.locator));
     }
 
+    public void addText(String value){
+        this.findControl();
+        this.control.sendKeys(value);
+    }
+
 }

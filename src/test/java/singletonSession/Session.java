@@ -41,5 +41,6 @@ public class Session {
         WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlToBe(url));
     }
+
 }
 

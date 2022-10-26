@@ -1,4 +1,4 @@
-package pages.todoist;
+package pages.TodoistTest;
 
 import controlSelenium.Button;
 import controlSelenium.TextBox;
@@ -10,4 +10,3 @@ public class CreateProject {
     public Button submitButton = new Button(By.xpath("//button[text()=\"Add\"]"));
     public Button createdProject = new Button(By.xpath("//ul[contains(@id, \"projects_list\")]/li[last()]"));
 }
-
