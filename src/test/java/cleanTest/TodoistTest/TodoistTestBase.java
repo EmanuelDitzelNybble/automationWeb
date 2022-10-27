@@ -11,7 +11,7 @@ public class TodoistTestBase {
 
         public LoginModal login = new LoginModal();
         public CreateProject project = new CreateProject();
-        public CreateTask taskCreation = new CreateTask();
+        public CreateTask createTask = new CreateTask();
 
         public EditTask edit = new EditTask();
 

@@ -14,4 +14,10 @@ public class CreateTask {
     public Button createTask = new Button(By.xpath("//span[text()='Add task']"));
     public Button highPriorityChoice = new Button(By.xpath("//span[text()='Priority 1']"));
     public Button lowPriorityChoice = new Button(By.xpath("//span[text()='Priority 4']"));
+
+    public Button lastTask(String name)
+    {
+        Button lastTask = new Button(By.xpath("//ul//li[last()]//li[@aria-selected=\"false\"][last()]//div[@class='markdown_content task_content' and text()='"+name+"']"));
+        return lastTask;
+    }
 }
