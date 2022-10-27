@@ -41,9 +41,9 @@ public class CRUDTodoist extends TodoistTestBase {
         createTask.lastTask(randomText).click();
         String date = edit.editDueDate.getText(); // locator.getAttribute(textContent) o getText()
         Thread.sleep(4000);
-        edit.editDueDate.click();
+        edit.editDueDate1.click();
         edit.editDueDateWeekend.click();
-        String newDate = edit.editDueDate.getText();
+        String newDate = edit.editDueDate1.getText();
         String priority = edit.editPriority.getText();
         edit.editPriority.click();
         String newPriority = edit.editPriority.getText();
