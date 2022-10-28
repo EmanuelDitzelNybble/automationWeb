@@ -51,13 +51,11 @@ public class Control {
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(this.locator));
     }
-
     public void waitClickable()
     {
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(this.locator));
     }
-
     public void addText(String value){
         this.findControl();
         this.control.sendKeys(value);
@@ -66,5 +64,4 @@ public class Control {
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(this.locator));
     }
-
 }

@@ -9,8 +9,8 @@ public class ChangePassword extends TestBaseTodoLy {
     public void userRegister() throws InterruptedException {
         String userName = "Emanuel";
         String userEmail = String.valueOf(new Date()) +"@gmail.com";
-        String password = "19910816";
-        String newPassword = "19910822";
+        String password = "19910822";
+        String newPassword = "19910816";
 
         mainPage.registerButton.click();
         registerSection.register(userName, userEmail, password);

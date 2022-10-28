@@ -10,29 +10,24 @@ import java.util.Date;
 public class CRUDYopMail extends TestBaseYopMail {
         @Test
         public void yopMail() throws InterruptedException {
-            String mail = "emanuel.ditzel@yopmail.com";
-            String randomText = "Body Text" + new Date();
-            String iframeInbox = "ifmail";
-            String iframeMessagePanel = "ifinbox";
-
             // Login
-            login.mail.setText(mail);
+            //login.mail.setText(k.mail);
             login.emailButton.click();
             inboxPanel.newMessageButton.click();
-            Session.getInstance().switchIFrame(iframeInbox);
+            //Session.getInstance().switchIFrame(k.iframeInbox);
             Assertions.assertTrue(newMessage.sendButton.isControlDisplayed(), "Error, login failed.");
             Assertions.assertFalse(login.clearButton.isControlDisplayed());
 
             // New Message
-            newMessage.toTextBox.setText(mail);
-            newMessage.subject.setText(randomText);
-            newMessage.bodyMessage.setText(randomText);
+            //newMessage.toTextBox.setText(k.mail);
+            //newMessage.subject.setText(k.randomText);
+            //newMessage.bodyMessage.setText(k.randomText);
             newMessage.sendButton.click();
 
             // Delete Message
             Session.getInstance().switchToDefaultFrame();
             inboxPanel.refreshButton.click();
-            Session.getInstance().switchIFrame(iframeMessagePanel);
+            //Session.getInstance().switchIFrame(k.iframeMessagePanel);
             inboxPanel.selectMessage.waitClickable();
             inboxPanel.selectMessage.click();
 
