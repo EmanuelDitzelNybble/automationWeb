@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 public class TickTickSignInTest extends TestBaseTickTick {
     @Test
     public void loginTest() throws InterruptedException {
+
         mainPage.signIn.click();
         signInPage.emailLogin.waitClickable();
         signInPage.emailLogin.setText(k.emailSet);

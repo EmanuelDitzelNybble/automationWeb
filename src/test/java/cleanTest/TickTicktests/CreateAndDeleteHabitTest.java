@@ -3,7 +3,7 @@ package cleanTest.TickTicktests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CreateHabitTest extends TestBaseTickTick{
+public class CreateAndDeleteHabitTest extends TestBaseTickTick{
     @Test
     public void createAndDeleteHabit() throws InterruptedException{
 
@@ -28,9 +28,15 @@ public class CreateHabitTest extends TestBaseTickTick{
         createHabitModal.okButton.click();
         createHabitModal.saveButton.click();
         Assertions.assertFalse(createHabitModal.dailyCheckIn.isControlDisplayed());
+
         //Delete Habit
-        Thread.sleep(4000);
-        habitSection.clickHabit(k.nickName).click();
-        Thread.sleep(4000);
+        habitSection.selectHabit.click();
+        calendarModal.optionButton.waitClickable();
+        calendarModal.optionButton.click();
+        calendarModal.deleteHabitButton.waitClickable();
+        calendarModal.deleteHabitButton.click();
+        calendarModal.deleteAlertButton.waitClickable();
+        calendarModal.deleteAlertButton.click();
+        Assertions.assertFalse(calendarModal.deleteAlertButton.isControlDisplayed());
     }
 }
