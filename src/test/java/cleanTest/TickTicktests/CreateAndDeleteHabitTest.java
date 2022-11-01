@@ -15,6 +15,7 @@ public class CreateAndDeleteHabitTest extends TestBaseTickTick{
         signInPage.signInButton.click();
         Assertions.assertFalse(signInPage.signInButton.isControlDisplayed(), "Login error");
 
+
         sidebarMenu.habitButton.waitClickable();
         sidebarMenu.habitButton.click();
         // Creating Habit
@@ -37,6 +38,6 @@ public class CreateAndDeleteHabitTest extends TestBaseTickTick{
         calendarModal.deleteHabitButton.click();
         calendarModal.deleteAlertButton.waitClickable();
         calendarModal.deleteAlertButton.click();
-        Assertions.assertFalse(calendarModal.deleteAlertButton.isControlDisplayed());
+        Assertions.assertFalse(calendarModal.deleteAlertButton.isControlDisplayed()); // mejorar
     }
 }

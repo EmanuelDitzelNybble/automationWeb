@@ -7,6 +7,7 @@ public class ChangeDateAndTimeFormatTest extends TestBaseTickTick {
     @Test
     public void ChangeDateAndTimeFormat() throws InterruptedException {
         String user = getAlphaNumericString(6)+"@gmail.com";
+
         //Sign Up
         mainPage.signUp.click();
         signUp.signUpButton.waitClickable();
@@ -32,6 +33,6 @@ public class ChangeDateAndTimeFormatTest extends TestBaseTickTick {
         preferenceSection.startWithMonday.waitClickable();
         preferenceSection.startWithMonday.click();
         settingsSection.doneButton.click();
-        Assertions.assertTrue(sidebarMenu.profileButton.isControlDisplayed());
+        Assertions.assertTrue(sidebarMenu.profileButton.isControlDisplayed()); // change
     }
 }
