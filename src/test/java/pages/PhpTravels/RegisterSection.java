@@ -23,11 +23,12 @@ public class RegisterSection {
     public TextBox password = new TextBox(By.id("inputNewPassword1"),"[Password] textbox in register modal");
     public TextBox confirmPassword = new TextBox(By.id("inputNewPassword2"),"[ConfirmPassword] textbox in register modal");
     //public CheckBox captcha = new CheckBox(By.xpath("//div[@class='recaptcha-checkbox-border']"),"[Captcha] checkbox in register section");
-    public Button registerButton = new Button(By.xpath("//div[@class='recaptcha-checkbox-border']"),"[Register] button in register section");
+    //public Button registerButton = new Button(By.xpath("//div[@class='recaptcha-checkbox-border']"),"[Register] button in register section");
     //public TextBox captchaIframe = new TextBox(By.xpath("//iframe[@title='reCAPTCHA']"),"Captcha Iframe");
 
     public CheckBox captchaCheckbox = new CheckBox(By.xpath("//div[@class=\"recaptcha-checkbox-border\"]"),"[Captcha] Button on registration page");
     //public Button captchaButton = new Button(By.id("recaptcha-anchor-label"),"[Captcha] in register section");
     public Control captchaFrame = new Control(By.xpath("//iframe[@title=\"reCAPTCHA\"]"), "captchaFrame");
+    public Button registerButton = new Button(By.xpath("//input[@class=\"btn btn-large btn-primary btn-recaptcha\"]"),"[Register] Button on registration page");
 
 }
