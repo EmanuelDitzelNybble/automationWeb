@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import pages.PhpTravels.LoginSection;
 import pages.PhpTravels.NavBarSection;
 import pages.PhpTravels.RegisterSection;
+import pages.TickTick.K;
 import singletonSession.Session;
 
 public class PhpTravelsTestBase {
@@ -15,6 +16,7 @@ public class PhpTravelsTestBase {
     public LoginSection loginSection = new LoginSection();
     public NavBarSection navBarSection = new NavBarSection();
     public RegisterSection registerSection = new RegisterSection();
+
 
 
     @BeforeEach

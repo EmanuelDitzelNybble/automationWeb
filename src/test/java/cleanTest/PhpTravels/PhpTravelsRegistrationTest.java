@@ -21,8 +21,12 @@ public class PhpTravelsRegistrationTest extends PhpTravelsTestBase {
         String confirmPwd = "danger1234";
         String registerURL = "https://phptravels.org/register.php";
         String loginURL = "https://phptravels.org/login";
+        String captchaIframe = "a-owwur1rfpo8l";
+
+
 
         navBarSection.SignUpNavBarButton.click();
+
         Session.getInstance().changeTab(registerURL);
         registerSection.name.waitClickable();
         registerSection.name.setText(name);
@@ -39,9 +43,25 @@ public class PhpTravelsRegistrationTest extends PhpTravelsTestBase {
         registerSection.mobileWhatsappNumber.setText(phoneNumber);
         registerSection.password.setText(password);
         registerSection.confirmPassword.setText(confirmPwd);
-        registerSection.captcha.click();
+
+        Session.getInstance().getBrowser().switchTo().frame(registerSection.captchaFrame.getAttribute("name"));
+
+        //registerSection.captchaCheckbox.waitClickable();
+        registerSection.captchaCheckbox.waitToElementToBePresent();
+        registerSection.captchaCheckbox.waitClickable();
+        registerSection.captchaCheckbox.check();
+        Thread.sleep(5000);
+
+        Session.getInstance().switchToDefaultFrame();
+        registerSection.registerButton.waitClickable();
         registerSection.registerButton.click();
-        //Session.getInstance().waitURLToChange("");
-        //Assertions.assertTrue();
+        Thread.sleep(5000);
+
+        Session.getInstance().changeTab("https://phptravels.com/demo/");
+        navBarSection.loginNavBarButton.waitClickable();
+        navBarSection.loginNavBarButton.click();
+
+        Session.getInstance().changeTab("https://phptravels.org/login");
+
     }
 }

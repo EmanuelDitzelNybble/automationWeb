@@ -42,10 +42,9 @@ public class Session {
         WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlToBe(url));
     }
+
     public void changeTab(String tabURL){
         browser.navigate().to(tabURL);
         browser.switchTo().window(browser.getWindowHandle());
     }
-
 }
-

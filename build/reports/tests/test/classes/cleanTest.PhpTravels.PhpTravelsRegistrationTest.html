@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">36.992s</div>
+<div class="counter">37.821s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,33 +76,16 @@
 <a name="registrationTest()"></a>
 <h3 class="failures">registrationTest()</h3>
 <span class="code">
-<pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class='recaptcha-checkbox-border']&quot;}
-  (Session info: chrome=107.0.5304.87)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+<pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class='recaptcha-checkbox-border'] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.5.0', revision: 'fe167b119a'
 System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.6.5', java.version: '11.0.16.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c98a11ace27b365803fae3bf2b3dfe12, findElement {using=xpath, value=//div[@class='recaptcha-checkbox-border']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/15/nkktjmmd7c9...}, goog:chromeOptions: {debuggerAddress: localhost:63835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:63835/devtoo..., se:cdpVersion: 107.0.5304.87, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c98a11ace27b365803fae3bf2b3dfe12
-	at java.base@11.0.16.1/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base@11.0.16.1/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base@11.0.16.1/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base@11.0.16.1/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at app//org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at app//org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at app//controlSelenium.Control.findControl(Control.java:27)
-	at app//controlSelenium.Control.click(Control.java:32)
-	at app//cleanTest.PhpTravels.PhpTravelsRegistrationTest.registrationTest(PhpTravelsRegistrationTest.java:41)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/15/nkktjmmd7c9...}, goog:chromeOptions: {debuggerAddress: localhost:57722}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:57722/devtoo..., se:cdpVersion: 107.0.5304.87, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 84ae993379da50ac03966d2628fbbc61
+	at app//org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at app//org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at app//controlSelenium.Control.waitClickable(Control.java:74)
+	at app//cleanTest.PhpTravels.PhpTravelsRegistrationTest.registrationTest(PhpTravelsRegistrationTest.java:56)
 	at java.base@11.0.16.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.16.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base@11.0.16.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -205,7 +188,7 @@ Session ID: c98a11ace27b365803fae3bf2b3dfe12
 </thead>
 <tr>
 <td class="failures">registrationTest()</td>
-<td class="failures">36.992s</td>
+<td class="failures">37.821s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -213,16 +196,16 @@ Session ID: c98a11ace27b365803fae3bf2b3dfe12
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 56971
+<pre>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 53385
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1667575874.507][WARNING]: This version of ChromeDriver has not been tested with Chrome version 107.
-Nov 04, 2022 12:31:15 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1667590847.129][WARNING]: This version of ChromeDriver has not been tested with Chrome version 107.
+Nov 04, 2022 4:40:47 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected upstream dialect: W3C
-Nov 04, 2022 12:31:16 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 04, 2022 4:40:48 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 107, so returning the closest version found: 106
-Nov 04, 2022 12:31:16 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 04, 2022 4:40:48 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found CDP implementation for version 107 of 106
 </pre>
 </span>
@@ -235,7 +218,7 @@ INFO: Found CDP implementation for version 107 of 106
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4</a> at Nov 4, 2022, 12:31:42 PM</p>
+<a href="http://www.gradle.org">Gradle 7.4</a> at Nov 4, 2022, 4:41:18 PM</p>
 </div>
 </div>
 </body>

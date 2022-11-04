@@ -3,6 +3,7 @@ package controlSelenium;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import singletonSession.Session;
@@ -44,6 +45,11 @@ public class Control {
             return false;
         }
     }
+    public void hoverAction(){
+        this.findControl();
+        Actions action = new Actions(Session.getInstance().getBrowser());
+        action.moveToElement(this.control).perform();
+    }
 
     public String getText(){
         this.findControl();
@@ -75,20 +81,5 @@ public class Control {
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(this.locator));
     }
-    /*
-    public void waitControl(By locator, int timeOut) throws InterruptedException {
-        Label test= new Label(this.locator); // subject
-        int i = 0;
-        do{
-            Thread.sleep(1000);
-            i++;
-            this.control.click(); // refressh
-
-        }while (!test.isControlDisplayed() || i <= timeOut);
-
-
-    }
-
-     */
 }
 
