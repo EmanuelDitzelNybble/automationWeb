@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cleanTest.todo.ly.LoginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-04T13:32:21" hostname="Ditzel" time="28.199">
+  <properties/>
+  <testcase name="Verify login is successfully" classname="cleanTest.todo.ly.LoginTest" time="28.199"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1667568744416	geckodriver	INFO	Listening on 127.0.0.1:53868
+1667568745374	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "51093" "--remote-allow-hosts" "localhost" "--remote-allow-origins" "http://127.0.0.1:51093/,http://localhost:51093/,http://[::1]:51093/" "-foreground" "-no-remote" "-profile" "/var/folders/15/nkktjmmd7c92gv1067xrhkq00000gn/T/rust_mozprofile7Cgnfy"
+1667568748578	Marionette	INFO	Marionette enabled
+1667568748724	Marionette	INFO	Listening on port 55782
+Read port: 55782
+Read port: 55782
+Read port: 55782
+WebDriver BiDi listening on ws://127.0.0.1:51093
+1667568751821	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/15/nkktjmmd7c92gv1067xrhkq00000gn/T/rust_mozprofile7Cgnfy/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51093/devtools/browser/77b3fe60-ea97-463a-873e-c9853023bc71
+Nov 04, 2022 10:32:37 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://todo.ly."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://todo.ly."
+1667568767839	Marionette	INFO	Stopped listening on port 55782
+]]></system-err>
+</testsuite>

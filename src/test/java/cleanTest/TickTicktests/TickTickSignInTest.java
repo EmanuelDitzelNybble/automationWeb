@@ -15,3 +15,4 @@ public class TickTickSignInTest extends TestBaseTickTick {
         Assertions.assertFalse(signInPage.signInButton.isControlDisplayed(), "Login error");
     }
 }
+

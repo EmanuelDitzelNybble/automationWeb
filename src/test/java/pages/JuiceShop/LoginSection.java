@@ -6,11 +6,11 @@ import controlSelenium.TextBox;
 import org.openqa.selenium.By;
 
 public class LoginSection {
-    public Button newCostumerLink = new Button(By.xpath("//a[@class='primary-link']"));
-    public TextBox emailLogin = new TextBox(By.xpath("//input[@id='email']"));
-    public TextBox pwdLogin = new TextBox(By.xpath("//input[@id='password']"));
-    public Label label = new Label(By.xpath("//h1[text()=\"Login\"]"));
-    public TextBox loginButtonSection = new TextBox(By.xpath("//button[@id='loginButton']"));
+    public Button newCostumerLink = new Button(By.xpath("//a[@class='primary-link']"),"");
+    public TextBox emailLogin = new TextBox(By.xpath("//input[@id='email']"),"");
+    public TextBox pwdLogin = new TextBox(By.xpath("//input[@id='password']"),"");
+    public Label label = new Label(By.xpath("//h1[text()=\"Login\"]"),"");
+    public TextBox loginButtonSection = new TextBox(By.xpath("//button[@id='loginButton']"),"");
 
 
 

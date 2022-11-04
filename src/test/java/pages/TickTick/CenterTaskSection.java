@@ -6,6 +6,6 @@ import controlSelenium.TextBox;
 import org.openqa.selenium.By;
 
 public class CenterTaskSection {
-    public Button skipButton = new Button(By.xpath("//span[text()=\"Skip\"]"));
-    public Label inboxLabel = new Label(By.id("//button[@id='left-menu-t']"));
+    public Button skipButton = new Button(By.xpath("//span[text()=\"Skip\"]"), "[Skip] button in Task Section");
+    //public Label inboxLabel = new Label(By.id("//button[@id='left-menu-t']"));
 }

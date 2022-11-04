@@ -1,10 +1,10 @@
 package cleanTest.todo.ly;
 
 import io.qameta.allure.*;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import utils.GetProperties;
 
+@Tag("Sanity")
 public class LoginTest extends TestBaseTodoLy {
     @Test
     @DisplayName("Verify login is successfully")
@@ -15,14 +15,15 @@ public class LoginTest extends TestBaseTodoLy {
     @Feature("Authentication")
     @Severity(SeverityLevel.CRITICAL)
     @Story("Story Login")
+    @Attachment
+    @Tag("SmokeTest")
     public void verifyLoginSuccessfully(){
         mainPage.loginButton.click();
-        loginModal.emailTextBox.setText("selenium@selenium2022.com");
-        loginModal.passwordTextBox.setText("12345");
+        loginModal.emailTextBox.setText(GetProperties.getInstance().getUser());
+        loginModal.passwordTextBox.setText(GetProperties.getInstance().getPwd());
         loginModal.loginButton.click();
         Assertions.assertTrue(menuSection.logoutButton.isControlDisplayed(),
                 "ERROR login was not successfully");
-
     }
 }
 

@@ -4,6 +4,7 @@ import factoryBrowser.FactoryBrowser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.GetProperties;
 
 import java.time.Duration;
 
@@ -12,9 +13,9 @@ public class Session {
     private WebDriver browser;
 
     private Session(){
-        // todo --> create properties file - browser
-        browser= FactoryBrowser.make("chrome").create();
+        browser= FactoryBrowser.make(GetProperties.getInstance().getBrowser()).create();
     }
+
     public static Session getInstance(){
         if (session == null)
             session= new Session();
@@ -40,6 +41,10 @@ public class Session {
     public void waitURLToChange(String url){
         WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlToBe(url));
+    }
+    public void changeTab(String tabURL){
+        browser.navigate().to(tabURL);
+        browser.switchTo().window(browser.getWindowHandle());
     }
 
 }

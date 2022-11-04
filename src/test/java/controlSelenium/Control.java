@@ -75,6 +75,7 @@ public class Control {
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(this.locator));
     }
+    /*
     public void waitControl(By locator, int timeOut) throws InterruptedException {
         Label test= new Label(this.locator); // subject
         int i = 0;
@@ -87,5 +88,7 @@ public class Control {
 
 
     }
+
+     */
 }
 
